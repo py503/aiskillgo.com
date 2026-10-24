@@ -12,7 +12,21 @@ theme = "PaperMod"
 
 [params.homeInfoParams]
   Title = "把用 AI 学到的技能分享给大家"
-  Content = "这里记录我用 AI 学到的技能、踩过的坑，和 Vibe Coding 的实战过程。全部亲测，第一人称。"
+  Content = "这里记录我用 AI 学到的技能、踩过的坑，和 Vibe Coding 的实战过程。全部亲测，第一人称。\n\n小红书：[AI技能go](https://www.xiaohongshu.com/user/profile/635f648b000000001901eb35)"
+
+[params.profileMode]
+  enabled = true
+  title = "aiskillgo"
+  subtitle = "把用 AI 学到的技能分享给大家"
+  [[params.profileMode.buttons]]
+    name = "文章"
+    url = "/posts/"
+  [[params.profileMode.buttons]]
+    name = "归档"
+    url = "/archives/"
+  [[params.profileMode.buttons]]
+    name = "小红书：AI技能go"
+    url = "https://www.xiaohongshu.com/user/profile/635f648b000000001901eb35"
 
 [menu]
   [[menu.main]]
