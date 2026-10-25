@@ -1,0 +1,102 @@
+/* 清爽科技风 · 主页 profileMode 定制
+ * 原理：PaperMod 会自动把 assets/css/extended/ 下的 css 拼在主题样式之后，
+ * 这里的规则会覆盖默认样式；文件在站点目录，主题升级不会丢。 */
+
+/* ---- 浅色：浅蓝白渐变底 ---- */
+body.list {
+    background: linear-gradient(180deg, #e6f2ff 0%, #f4faff 45%, #ffffff 100%);
+    background-attachment: fixed;
+}
+
+/* 中央卡片：毛玻璃白卡，托住标题和按钮 */
+.main .profile .profile_inner {
+    background: rgba(255, 255, 255, 0.68);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    box-shadow: 0 16px 40px rgba(10, 88, 214, 0.10);
+    padding: 2.75rem 3.25rem;
+}
+
+/* 标题：蓝到青的渐变字 */
+.profile_inner h1 {
+    font-size: 2.75rem;
+    letter-spacing: 0.02em;
+    background: linear-gradient(90deg, #0a58d6 0%, #00a0dc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* 标语：蓝灰色，比默认灰更透亮 */
+.profile_inner span {
+    color: #4a6b8a;
+    font-size: 1.05rem;
+}
+
+/* 按钮区放宽一点 */
+.profile_inner .buttons {
+    max-width: 480px;
+    margin-top: 0.5rem;
+}
+
+/* 按钮：科技蓝药丸，悬停上浮 + 阴影加深 */
+.profile_inner .button {
+    background: #0a58d6;
+    color: #fff;
+    border-radius: 999px;
+    padding: 0.6rem 1.4rem;
+    font-size: 1rem;
+    box-shadow: 0 8px 20px rgba(10, 88, 214, 0.28);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.profile_inner .button:hover {
+    background: #084fc0;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(10, 88, 214, 0.38);
+}
+
+/* 小屏幕：卡片内边距收一收 */
+@media (max-width: 480px) {
+    .main .profile .profile_inner {
+        padding: 2rem 1.25rem;
+    }
+    .profile_inner h1 {
+        font-size: 2.25rem;
+    }
+}
+
+/* ---- 深色：深海军蓝渐变底，按钮换亮蓝 ---- */
+[data-theme="dark"] body.list {
+    background: linear-gradient(180deg, #0a1628 0%, #0f1e33 50%, #111827 100%);
+    background-attachment: fixed;
+}
+
+[data-theme="dark"] .main .profile .profile_inner {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.10);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="dark"] .profile_inner h1 {
+    background: linear-gradient(90deg, #60a5fa 0%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+[data-theme="dark"] .profile_inner span {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .profile_inner .button {
+    background: #1d4ed8;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+[data-theme="dark"] .profile_inner .button:hover {
+    background: #2563eb;
+    box-shadow: 0 12px 26px rgba(37, 99, 235, 0.5);
+}
