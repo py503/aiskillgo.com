@@ -29,10 +29,11 @@ body.list {
     color: transparent;
 }
 
-/* 标语：蓝灰色，比默认灰更透亮 */
-.profile_inner span {
+/* 标语：蓝灰色，比默认灰更透亮（用 > 只选中标语本身，
+ * 不误伤按钮里那层 span，否则按钮文字会被染成深色糊在蓝底上） */
+.profile_inner > span {
     color: #4a6b8a;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
 }
 
 /* 按钮区放宽一点 */
@@ -41,21 +42,26 @@ body.list {
     margin-top: 0.5rem;
 }
 
-/* 按钮：科技蓝药丸，悬停上浮 + 阴影加深 */
+/* 按钮：亮科技蓝药丸，文字放大加粗 + 强制纯白，悬停上浮 + 阴影加深 */
 .profile_inner .button {
-    background: #0a58d6;
+    background: #3b82f6;
     color: #fff;
     border-radius: 999px;
-    padding: 0.6rem 1.4rem;
-    font-size: 1rem;
-    box-shadow: 0 8px 20px rgba(10, 88, 214, 0.28);
+    padding: 0.65rem 1.5rem;
+    font-size: 1.12rem;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
+.profile_inner .button .button-inner {
+    color: #fff;
+}
+
 .profile_inner .button:hover {
-    background: #084fc0;
+    background: #2563eb;
     transform: translateY(-2px);
-    box-shadow: 0 12px 26px rgba(10, 88, 214, 0.38);
+    box-shadow: 0 12px 26px rgba(59, 130, 246, 0.45);
 }
 
 /* 小屏幕：卡片内边距收一收 */
@@ -87,16 +93,20 @@ body.list {
     color: transparent;
 }
 
-[data-theme="dark"] .profile_inner span {
+[data-theme="dark"] .profile_inner > span {
     color: #94a3b8;
 }
 
 [data-theme="dark"] .profile_inner .button {
-    background: #1d4ed8;
+    background: #2563eb;
     box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
 }
 
+[data-theme="dark"] .profile_inner .button .button-inner {
+    color: #fff;
+}
+
 [data-theme="dark"] .profile_inner .button:hover {
-    background: #2563eb;
+    background: #3b82f6;
     box-shadow: 0 12px 26px rgba(37, 99, 235, 0.5);
 }
