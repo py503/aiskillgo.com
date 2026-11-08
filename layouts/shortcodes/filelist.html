@@ -1,0 +1,7 @@
+<ul>
+{{ range readDir "static/files" }}
+  {{ if not .IsDir }}
+  <li><a href="/files/{{ .Name }}">{{ .Name }}</a>（{{ div .Size 1024 }} KB）</li>
+  {{ end }}
+{{ end }}
+</ul>
